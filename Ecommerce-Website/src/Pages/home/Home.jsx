@@ -39,7 +39,7 @@ function Home() {
       <h1>Trending Products</h1>
       <div className="product-section">
         {cate.slice(0, 7).map((item)=>(
-          <Product name={item.name} price={item.price} image={item.image}/>
+          <Product name={item.name} price={item.price} image={item.image} id={item.id}/>
         ))}
       </div>
       

@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Footer from './Components/footer/Footer'
 import Nav from './Components/nav/Nav'
 import Shop from './Pages/shop/Shop'
+import Cart from './Pages/cart/Cart'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
       </BrowserRouter>

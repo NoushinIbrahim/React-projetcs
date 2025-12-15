@@ -1,0 +1,37 @@
+.cart{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+.emptycart{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.emptycart img{
+    max-width: 400px;
+    width: 90;
+    
+    
+    margin-top: 40px;
+}
+
+.cartcart-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
