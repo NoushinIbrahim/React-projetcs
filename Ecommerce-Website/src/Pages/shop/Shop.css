@@ -95,7 +95,7 @@
   animation: pulse 1.5s infinite;
 }
 
-..skeleton {
+.skeleton {
   background: #f0f0f0;
   animation: shimmer 1.5s infinite linear;
 }
