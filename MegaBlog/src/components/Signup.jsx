@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import authservice from '../appwrite/auth'
+import authService from '../appwrite/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../store/authslice'
 import {Button, Input, Logo} from './index'
@@ -15,9 +15,9 @@ function Signup() {
     const create = async(data) =>{
         setError('')
         try {
-           const userData =  await authservice.createAcount(data)
+           const userData =  await authService.createAcount(data)
            if (userData) {
-           const userData =  await authservice.getCurrentUser()
+           const userData =  await authService.getCurrentUser()
            if (userData) dispatch (login(userData));
            navigate('/')
            }

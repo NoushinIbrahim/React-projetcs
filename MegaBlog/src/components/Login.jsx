@@ -1,24 +1,24 @@
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {login as authlogin} from '../store/authslice'
+import {login as authLogin} from '../store/authslice'
 import {Input, Button, Logo} from './index'
 import { useDispatch } from 'react-redux'
-import authservice from '../appwrite/auth'
+import authService from '../appwrite/auth'
 import {useForm} from 'react-hook-form'
 
 function Login() {
     const navigate  = useNavigate()
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
-    const [error, setError] = useState()
+    const [error, setError] = useState('')
 
     const login = async (data)=> {
         setError('')
         try {
-            const session = await authservice.login(data)
+            const session = await authService.login(data)
             if (session) {
-                const userData = await authservice.getCurrentUser()
-                if (userData) dispatch(authlogin(userData))
+                const userData = await authService.getCurrentUser()
+                if (userData) dispatch(authLogin(userData))
                     navigate('/')
             }
         } catch (error) {
@@ -50,14 +50,15 @@ function Login() {
                 type = 'email'
                 {...register('email', {required: true,
                     validate: {
-                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'Email address must be a valid address',
+                        matchPatern: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 
+                         'Email address must be a valid address',
                     }
                 })}
                 />
                 <Input 
                 label = 'Password:'
                 type= 'password'
-                placeholder= 'Enter your password'
+                placeholder= 'enter your password'
                 {...register('password', {
                     required: true,
 
@@ -67,6 +68,7 @@ function Login() {
                 type= 'submit'
                 className=  'w-full'
                 >Sign  in</Button>
+                
             </div>
         </form>
         </div>

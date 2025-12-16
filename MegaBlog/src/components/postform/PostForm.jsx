@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 function PostForm({post}) {
     const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
         defaultValues:{
-            title: post? post.title || '',
+            title: post?.title || '',
             slug: post?.slug || '',
             content: post?.content || '',
             status: post?.status || 'active',
@@ -26,11 +26,11 @@ function PostForm({post}) {
         const file = data.image[0] ? appwriteService.uploadFile(data.image[0]) : null
 
         if (file) {
-          appwriteService.deleteFile(post.featuredimage)
+          appwriteService.deleteFile(post.featuredImage)
         }
         const dbpost = await service.updatePost(post.$id,{
           ...data,
-          featuredimage: file ? file.$id : undefined,
+          featuredImage: file ? file.$id : undefined,
         })
           if (dbpost) {
             navigate(`/post/${dbpost.$id}`)
@@ -40,13 +40,13 @@ function PostForm({post}) {
         const file = await appwriteService.uploadFile(data.image[0]);
         if (file) {
           const fileId = file.$id
-          data.featuredimage = fileId
-          const dbpost = await appwriteService.updatePost({
+          data.featuredImage = fileId
+          const dbPost = await appwriteService.createPost({
             ...data,
             userId: userData.$id,
           })
-          if (dbpost) {
-            navigate(`/post/${dbpost.$id}`)
+          if (dbPost) {
+            navigate(`/post/${dbPost.$id}`)
           }
         }
       }

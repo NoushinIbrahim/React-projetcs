@@ -6,9 +6,9 @@ import LogoutBtn from "./Header/LogoutBtn.jsx";
 import RTE from "./RTE.jsx";
 import Signup from "../pages/Signup.jsx";
 import Login from "../pages/Login.jsx";
-import Post from './Postcard.jsx/Post.jsx';
+import Post from "./postcard/Postcard.jsx";
 import PostForm from "./postform/PostForm.jsx";
-import Postcard from "./Postcard/Postcard.jsx";
+import Postcard from "./postcard/Postcard.jsx"
 import AuthLayout from "./AuthLayout/AuthLayout.jsx";
 
 

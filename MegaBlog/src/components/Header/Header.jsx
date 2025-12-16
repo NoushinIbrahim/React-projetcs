@@ -19,17 +19,17 @@ function Header() {
       active: !authStatus
     },
     {
-      name: 'signup',
+      name: 'Signup',
       slug: '/signup',
       active: !authStatus
     },
     {
-      name: 'all posts',
+      name: 'All posts',
       slug: '/posts',
       active: authStatus
     },
     {
-      name: 'add post',
+      name: 'Add post',
       slug: '/add-post',
       active: authStatus
     }
