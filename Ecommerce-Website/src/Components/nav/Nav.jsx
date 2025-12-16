@@ -1,57 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { GiShoppingBag } from "react-icons/gi";
-import { IoSearch } from "react-icons/io5";
-import { IoCartOutline } from "react-icons/io5";
-import './Nav.css'
-import { Link } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux'
-
-
-
+import { IoSearch, IoCartOutline } from "react-icons/io5";
+import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./Nav.css";
 
 function Nav() {
-  let dispatch = useDispatch()
-  let items = useSelector(state =>state
+  const cart = useSelector((state) => state.cart);
+  const [glass, setGlass] = useState(false);
 
-  )
+  useEffect(() => {
+    const handleScroll = () => {
+      setGlass(window.scrollY > 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="nav">
+    <>
       <div className="top-nav">
-        <Link to="/">
-          <div className="logo">
-            <span>V-Shop</span>
+        <div className="logo">
+          <span>V-Shop</span>
+          <Link to="/" className="">
             <GiShoppingBag />
-          </div>
-        </Link>
+          </Link>
+        </div>
         <form className="search-box">
-          <input type="text" placeholder="search items.." />
-          <button>
+          <input type="text" placeholder="Search products..." />
+          <button type="submit">
             <IoSearch />
           </button>
         </form>
-        <Link to='/cart'>
-        <div  className="cart-box">
-          <IoCartOutline />
-          <span>{items.cart.length}</span>
+        <div className="cart-box">
+          <Link to="/cart">
+            <IoCartOutline />
+            <span>{cart.length}</span>
+          </Link>
         </div>
-        </Link>
       </div>
-      <div className="bottom-nav">
-        <Link to="/">
-          <li>Home</li>
-        </Link>
-        <Link to="/shop">
-          <li>Shope</li>
-        </Link>
-        <Link to="/cart">
-          <li>Cart</li>
-        </Link>
-        <Link to="/contect">
-          <li>Contect</li>
-        </Link>
-      </div>
-    </div>
+      {/* TOP SECTION */}
+
+      <form className="search"></form>
+
+      {/* STICKY MENU */}
+      <nav className={`nav-menu ${glass ? "glass" : ""}`}>
+        <NavLink to="/" end>
+          Home
+        </NavLink>
+        <NavLink to="/shop">Shop</NavLink>
+        <NavLink to="/cart">Cart</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </nav>
+    </>
   );
 }
 
-export default Nav
+export default Nav;

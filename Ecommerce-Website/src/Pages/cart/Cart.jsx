@@ -1,28 +1,53 @@
- import React, { use } from 'react'
-import './Cart.css'
-import CartCard from '../../Components/CartCard/CartCard'
-import { useSelector } from 'react-redux'
-import ec from '../../assestss/emptycart.png'
+import React from "react";
+import "./Cart.css";
+import CartCard from "../../Components/CartCard/CartCard";
+import { useSelector } from "react-redux";
+import ec from "../../assestss/emptycart.png";
 
 function Cart() {
-    let item = useSelector(state=>state)
+  const state = useSelector((state) => state);
+  const cartItems = state.cart;
+
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
   return (
     <div className="cart">
-      {item.cart.length <= 0 ? (
-        <div className="emptycart">
-          <img src={ec} alt="" />
-          <h1>emptycart</h1>
+      {cartItems.length === 0 ? (
+        <div className="emptycart fade-in">
+          <img src={ec} alt="Empty Cart" />
+          <h1>Your cart is empty 🛒</h1>
+          <p>Looks like you haven’t added anything yet</p>
         </div>
-      ) : <div className='cartcart-section'>
-        {item.cart.map((item)=>(
-            <CartCard name={item.name} price={item.price} image={item.image} id={item.id} />
-        ))}
-      </div>
-        
-      }
-      
+      ) : (
+        <div className="cartcart-section">
+          <h2 className="cart-title">Your Shopping Cart</h2>
+
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <CartCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                price={item.price}
+                image={item.image}
+              />
+            ))}
+          </div>
+
+          <div className="price-section slide-up">
+            <div>
+              <span>Total Products:</span>
+              <strong>{cartItems.length}</strong>
+            </div>
+            <div>
+              <span>Total Price:</span>
+              <strong>Rs {totalPrice}</strong>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-export default Cart
+export default Cart;

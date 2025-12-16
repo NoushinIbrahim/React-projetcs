@@ -1,0 +1,234 @@
+/* ===============================
+   CONTACT SECTION - ECOMMERCE THEME
+================================ */
+.contact {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #f4f7fd, #e8effb);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===============================
+   CONTACT HEADER CONTENT
+================================ */
+.contact-content {
+  text-align: center;
+  margin-bottom: 50px;
+  z-index: 2;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.contact-content h2 {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+.contact-content p {
+  font-size: 17px;
+  color: #555;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* ===============================
+   FORM CONTAINER
+================================ */
+.contact form {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  padding: 45px 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   INPUT GROUP
+================================ */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1.8px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  background: #fafafa;
+  transition: all 0.35s ease;
+}
+
+.input-group textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+/* Focus effect */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #626263;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(123, 90, 240, 0.2);
+}
+
+/* Floating label */
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #888;
+  background: #fff;
+  padding: 0 6px;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #22201e;
+}
+
+/* ===============================
+   BUTTON - ECOMMERCE STYLE
+================================ */
+.contact form button {
+  padding: 14px 28px;
+  background: black;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact form button:hover {
+  transform: scale(1.05);
+   transition: all 0.35s ease;
+   overflow: hidden;
+  box-shadow: linear-gradient(to right, #caa57a, #111);
+    background:linear-gradient(to right, #caa57a, #111);
+
+}
+
+.contact form button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background:linear-gradient(to right, #caa57a, #111);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.contact form button:hover::after {
+  left: 125%;
+  transition: all 0.7s ease;
+}
+
+/* ===============================
+   SUCCESS MESSAGE
+================================ */
+.success-msg {
+  text-align: center;
+  font-weight: 600;
+  color: #28a745;
+  font-size: 16px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ===============================
+   PARTICLES / DECORATIVE ELEMENTS
+================================ */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #7b5af0, #9b6cff);
+  opacity: 0.5;
+  animation: float 8s linear infinite;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .contact-content h2 { font-size: 36px; }
+  .contact form { padding: 35px 25px; }
+}
+
+@media (max-width: 480px) {
+  .contact-content h2 { font-size: 28px; }
+  .contact-content p { font-size: 15px; }
+  .contact form button { width: 100%; }
+}
