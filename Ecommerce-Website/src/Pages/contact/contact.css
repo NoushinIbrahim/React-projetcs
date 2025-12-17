@@ -172,18 +172,45 @@
 }
 
 .checkout-btn {
-  background: #ff7a00;
+  border-radius: 30px;
+  border: none;
+    transition: all 0.35s ease;
+
+ background: linear-gradient(to right, #111, #333);  color: white;
+  cursor: pointer;
   color: #fff;
   padding: 14px 28px;
-  border-radius: 10px;
+  
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
 }
 
-.checkout-btn:hover {
-  background: #e96b00;
+.checkout-btn ::before{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
 }
+
+.checkout-btn button:hover::before{
+      transform: translateX(100%);
+
+}
+
+.checkout-btn button:hover{
+  background: linear-gradient(to right, #caa57a, #111);
+  transform: scale(1.05);
+}
+
+
+
 
 /* ===============================
    SUCCESS MESSAGE

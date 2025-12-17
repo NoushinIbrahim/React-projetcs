@@ -47,7 +47,7 @@ function Cart() {
             </div>
           </div>
           <div className="checkout-btn-wrapper">
-            <Link to="/checkout" className="checkout-btn">
+            <Link to="/checkout" className="checkout-btn  btn-check">
               Proceed to Checkout
             </Link>
           </div>
