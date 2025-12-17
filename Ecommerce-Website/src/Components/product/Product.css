@@ -29,6 +29,7 @@
   height: 230px;
   border-radius: 18px;
   overflow: hidden;
+  position: relative;
 }
 
 /* IMAGE */
@@ -117,7 +118,7 @@
 
 /* ================= QUICK VIEW ================= */
 
-.product::after {
+/* .product::after {
   content: "Quick View";
   position: absolute;
   bottom: -60px;
@@ -130,10 +131,31 @@
   font-size: 13px;
   letter-spacing: 0.4px;
   transition: all 0.4s ease;
+} */
+
+/* .product:hover::after {
+  bottom: 20px;
+} */
+
+.product-img::after {
+  content: "Quick View";
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
 }
 
-.product:hover::after {
-  bottom: 20px;
+.product:hover .product-img::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 /* QUICK VIEW MODAL */

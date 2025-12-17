@@ -3,6 +3,8 @@ import "./Cart.css";
 import CartCard from "../../Components/CartCard/CartCard";
 import { useSelector } from "react-redux";
 import ec from "../../assestss/emptycart.png";
+import { Link } from "react-router-dom";
+
 
 function Cart() {
   const state = useSelector((state) => state);
@@ -43,6 +45,11 @@ function Cart() {
               <span>Total Price:</span>
               <strong>Rs {totalPrice}</strong>
             </div>
+          </div>
+          <div className="checkout-btn-wrapper">
+            <Link to="/checkout" className="checkout-btn">
+              Proceed to Checkout
+            </Link>
           </div>
         </div>
       )}

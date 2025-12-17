@@ -165,6 +165,26 @@
   transition: all 0.7s ease;
 }
 
+
+.checkout-btn-wrapper {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.checkout-btn {
+  background: #ff7a00;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #e96b00;
+}
+
 /* ===============================
    SUCCESS MESSAGE
 ================================ */

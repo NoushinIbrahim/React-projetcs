@@ -1,0 +1,65 @@
+.payment {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #fff6f0, #ffe6d6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.payment h2 {
+  margin-bottom: 25px;
+}
+
+.payment-box {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  animation: scaleIn 0.5s ease;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.payment button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+      transition: all 0.35s ease;
+
+}
+
+.payment button::before{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.payment button:hover::before{
+    transform: translateX(100%);
+
+}
+
+.payment button:hover {
+  background: linear-gradient(to right, #caa57a, #111);
+  transform: scale(1.05);}

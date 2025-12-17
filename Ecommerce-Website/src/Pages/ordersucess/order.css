@@ -1,0 +1,30 @@
+.order-success {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #fdf7f3, #ffe6d6);
+  animation: fadeUp 0.7s ease;
+}
+
+.order-success h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.order-success p {
+  font-size: 16px;
+  color: #555;
+}
+
+.order-success button {
+  margin-top: 20px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}

@@ -138,6 +138,7 @@ border: none;
   transition: 0.3s;
 }
 
+
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
   width: 100%;
@@ -146,6 +147,134 @@ border: none;
 .nav-menu a.active {
   color: #f8c488;
 }
+
+/* ===== AUTH BUTTONS ===== */
+
+.auth-btn,
+.logout-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* Login */
+.auth-btn {
+  background: linear-gradient(135deg, #caa57a, #f8c488);
+  color: #111 !important;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248, 196, 136, 0.4);
+}
+
+/* Register */
+.auth-btn.outline {
+  background: transparent;
+  border: 1px solid #caa57a;
+  color: #f8c488 !important;
+}
+
+.auth-btn.outline:hover {
+  background: #caa57a;
+  color: #111 !important;
+}
+
+/* Logout */
+.logout-btn {
+  background: transparent;
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  box-shadow: 0 5px 18px rgba(255, 107, 107, 0.4);
+  transform: scale(1.05);
+}
+
+/* Smooth animation */
+.nav-menu a,
+.logout-btn {
+  animation: fadeDown 0.5s ease;
+}
+
+
+.nav-menu {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* CENTER LINKS */
+.nav-center {
+  display: flex;
+  gap: 40px;
+}
+
+/* RIGHT AUTH */
+.nav-right {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Smooth hover */
+.nav-center a,
+.nav-right a,
+.logout-btn {
+  transition: 0.3s ease;
+}
+
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
+
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
