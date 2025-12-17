@@ -18,7 +18,7 @@ import Payment from './Pages/payment/Payment.jsx'
 function App() {
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter basename="/React-projetcs/Ecommerce-Website"> */}
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/contact" element={<ContactComponent />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 }
