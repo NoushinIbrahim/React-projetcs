@@ -262,11 +262,37 @@ border: none;
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .search {
-    display: none;
+
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    color: white;
   }
 
   .nav-menu {
-    gap: 22px;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    height: auto;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-right {
+    position: static;   /* 🔥 IMPORTANT */
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-box {
+    display: none;
   }
 }

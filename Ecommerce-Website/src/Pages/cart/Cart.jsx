@@ -38,14 +38,15 @@ function Cart() {
 
           <div className="price-section slide-up">
             <div>
-              <span>Total Products:</span>
+              <span>Total Items:</span>
               <strong>{cartItems.length}</strong>
             </div>
             <div>
-              <span>Total Price:</span>
+              <span>Grand Total:</span>
               <strong>Rs {totalPrice}</strong>
             </div>
           </div>
+
           <div className="checkout-btn-wrapper">
             <Link to="/checkout" className="checkout-btn  btn-check">
               Proceed to Checkout

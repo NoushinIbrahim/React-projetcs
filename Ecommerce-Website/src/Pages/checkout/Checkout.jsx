@@ -9,18 +9,18 @@ function Checkout() {
 
   const user = localStorage.getItem("user");
 
-  // 🔐 Login check (CORRECT WAY)
+
   useEffect(() => {
     if (!user) {
       navigate("/login");
     }
   }, [user, navigate]);
 
-  // ✅ Correct total
-  const total = cart.reduce(
-    (sum, item) => sum + Number(item.price) * item.quantity,
-    0
-  );
+
+ const total = cart.reduce(
+   (sum, item) => sum + Number(item.price) * (item.quantity || 1),
+   0
+ );
 
   const handleCheckout = (e) => {
     e.preventDefault();
@@ -56,14 +56,14 @@ function Checkout() {
           {cart.map((item) => (
             <div key={item.id} className="summary-item">
               <p>
-                {item.name} × {item.quantity}
+                {item.name} × {item.quantity || 1}
               </p>
-              <p>Rs {item.price * item.quantity}</p>
+              <p>Rs {Number(item.price) * (item.quantity || 1)}</p>
             </div>
           ))}
 
           <hr />
-          <h4>Total: Rs {total}</h4>
+          <h4 className="order-total">Total: Rs {total}</h4>
         </div>
       </div>
     </div>

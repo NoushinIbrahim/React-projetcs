@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from './Pages/home/Home'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 import Footer from './Components/footer/Footer'
 import Nav from './Components/nav/Nav'
 import Shop from './Pages/shop/Shop'
@@ -19,6 +19,7 @@ function App() {
   return (
     <>
       {/* <BrowserRouter basename="/React-projetcs/Ecommerce-Website"> */}
+     
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,6 +33,7 @@ function App() {
           <Route path="/contact" element={<ContactComponent />} />
         </Routes>
         <Footer />
+         
       {/* </BrowserRouter> */}
     </>
   );
